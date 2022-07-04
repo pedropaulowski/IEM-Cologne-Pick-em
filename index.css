@@ -11,6 +11,7 @@ body {
 
 .team-board{
     border: 1px solid black;
+    /* max-width: 100px; */
     width: 100px;
     height: 25px;
     display: flex;
@@ -44,7 +45,7 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: stretch;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 .tournament {
@@ -133,5 +134,26 @@ select {
     flex-direction: column;
 }
 
+#formStageSelection {
+    margin: auto;
+    max-width: 1024px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
 
+label {
+    padding-right: 50px;
+}
 
+@media (max-width: 480px)
+{
+ .team-board {
+    width: 70px;
+    font-size: 15px;
+ }
+ .vetos {
+    display: none;
+ }
+}
