@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form id="formStageSelection" onchange="setSeeds()">
+              <input type="radio" id="groupA" name="stage" value="groupA" checked>
+              <label for="groupA">Group A</label>
+              <input type="radio" id="groupB" name="stage" value="groupB">
+              <label for="groupB">Group B</label>
+              <input type="radio" id="playoffs" name="stage" value="playoffs">
+              <label for="playoffs">Playoffs</label>
+        </form>
+        <div class="tournament">
+
+
+            <div class="bracket">
+
+                <div class="round" id="UpperOpeningRound">
+                </div>
+
+                <div class="round" id="UpperSemiFinals"> </div>
+
+                <div class="round" id="UpperFinal"> </div>
+            </div>
+
+            
+            <hr>
+            <div class="bracket">
+                
+                <div class="round" id="LowerRound1"> </div>
+            
+                <div class="round" id="LowerSemiFinals"></div>
+
+                <div class="round" id="LowerFinal"> </div>
+
+            </div>
+        </div>
+        
+        <div id="pop_up_vetos">
+            
+        </div>
+
+
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+</html>
