@@ -157,10 +157,12 @@ function setSeeds() {
 
         console.log(localStoragePlayoffs)
 
-        if(localStoragePlayoffs.quarterFinals != undefined) {
-            playoffsMatchups = localStoragePlayoffs
-            group = playoffsMatchups
+        if(localStoragePlayoffs != null) {
+            if(localStoragePlayoffs.quarterFinals != undefined) {
+                playoffsMatchups = localStoragePlayoffs
+                group = playoffsMatchups
 
+            }
         }
 
         createSchedule(playoffsMatchups)
