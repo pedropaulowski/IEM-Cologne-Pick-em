@@ -155,7 +155,7 @@ function setSeeds() {
         
         let localStoragePlayoffs = JSON.parse(localStorage.getItem('playoffs'))
 
-        console.log(localStoragePlayoffs)
+        // console.log(localStoragePlayoffs)
 
         if(localStoragePlayoffs != null) {
             if(localStoragePlayoffs.quarterFinals != undefined) {
