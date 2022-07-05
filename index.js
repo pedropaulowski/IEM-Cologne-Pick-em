@@ -969,6 +969,11 @@ function winner(round, winner, loser) {
             group.UpperBracket.UpperFinal[0].winner = ''
             group.UpperBracket.UpperFinal[0].loser = ''
 
+            group.UpperBracket.UpperSemiFinals[0].winner = ''
+            group.UpperBracket.UpperSemiFinals[0].loser = ''
+
+            group.LowerBracket.LowerRound1[0].winner = ''
+            group.LowerBracket.LowerRound1[0].loser = ''
 
             if(group.LowerBracket.LowerSemiFinals[1].team1 == loser)
                 group.LowerBracket.LowerSemiFinals[1].team1 = ''
@@ -1003,6 +1008,12 @@ function winner(round, winner, loser) {
             group.UpperBracket.UpperFinal[0].winner = ''
             group.UpperBracket.UpperFinal[0].loser = ''
 
+            group.UpperBracket.UpperSemiFinals[0].winner = ''
+            group.UpperBracket.UpperSemiFinals[0].loser = ''
+
+            group.LowerBracket.LowerRound1[0].winner = ''
+            group.LowerBracket.LowerRound1[0].loser = ''
+
             if(group.LowerBracket.LowerSemiFinals[1].team1 == loser)
                 group.LowerBracket.LowerSemiFinals[1].team1 = ''
         break
@@ -1033,6 +1044,12 @@ function winner(round, winner, loser) {
             group.UpperBracket.UpperFinal[0].winner = ''
             group.UpperBracket.UpperFinal[0].loser = ''
 
+            group.UpperBracket.UpperSemiFinals[1].winner = ''
+            group.UpperBracket.UpperSemiFinals[1].loser = ''
+
+            group.LowerBracket.LowerRound1[1].winner = ''
+            group.LowerBracket.LowerRound1[1].loser = ''
+
             if(group.LowerBracket.LowerSemiFinals[1].team1 == loser)
                 group.LowerBracket.LowerSemiFinals[1].team1 = ''
         break
@@ -1054,6 +1071,12 @@ function winner(round, winner, loser) {
             group.UpperBracket.UpperFinal[0].winner = ''
             group.UpperBracket.UpperFinal[0].loser = ''
 
+            group.LowerBracket.LowerRound1[1].winner = ''
+            group.LowerBracket.LowerRound1[1].loser = ''
+
+            group.UpperBracket.UpperSemiFinals[1].winner = ''
+            group.UpperBracket.UpperSemiFinals[1].loser = ''
+
             
         break
 
@@ -1074,8 +1097,13 @@ function winner(round, winner, loser) {
             group.LowerBracket.LowerFinal[0].winner = ''
             group.LowerBracket.LowerFinal[0].loser = ''
 
+            //mudando cor final
 
+            group.UpperBracket.UpperFinal[0].winner = ''
+            group.UpperBracket.UpperFinal[0].loser = ''
 
+            group.LowerBracket.LowerSemiFinals[1].winner = ''
+            group.LowerBracket.LowerSemiFinals[1].loser = ''
 
         break
 
@@ -1094,6 +1122,12 @@ function winner(round, winner, loser) {
             group.LowerBracket.LowerFinal[0].winner = ''
             group.LowerBracket.LowerFinal[0].loser = ''
 
+            group.UpperBracket.UpperFinal[0].winner = ''
+            group.UpperBracket.UpperFinal[0].loser = ''
+
+            group.LowerBracket.LowerSemiFinals[0].winner = ''
+            group.LowerBracket.LowerSemiFinals[0].loser = ''
+
         break
 
         //Upper Final
@@ -1110,21 +1144,39 @@ function winner(round, winner, loser) {
 
         case 'lbr1_m1':
             html.lbsf_m1_team2.innerHTML = winner
+            group.LowerBracket.LowerFinal[0].team1 = ''
             
             group.LowerBracket.LowerSemiFinals[0].team2 = winner
 
             group.LowerBracket.LowerRound1[0].winner = winner
             group.LowerBracket.LowerRound1[0].loser = loser
+
+
+            //mudando cor caminho percorrido
+            group.LowerBracket.LowerSemiFinals[0].winner = ''
+            group.LowerBracket.LowerSemiFinals[0].loser = ''
+
+            group.LowerBracket.LowerFinal[0].winner = ''
+            group.LowerBracket.LowerFinal[0].loser = ''
+
+
         break
 
         
         case 'lbr1_m2':
             html.lbsf_m1_team2.innerHTML = winner
+            group.LowerBracket.LowerFinal[0].team2 = ''
             
             group.LowerBracket.LowerSemiFinals[1].team2 = winner
 
             group.LowerBracket.LowerRound1[1].winner = winner
             group.LowerBracket.LowerRound1[1].loser = loser
+
+            group.LowerBracket.LowerSemiFinals[1].winner = ''
+            group.LowerBracket.LowerSemiFinals[1].loser = ''
+
+            group.LowerBracket.LowerFinal[0].winner = ''
+            group.LowerBracket.LowerFinal[0].loser = ''
         break
 
         //Lower Bracket Semifinals
@@ -1137,6 +1189,10 @@ function winner(round, winner, loser) {
             group.LowerBracket.LowerSemiFinals[0].winner = winner
             group.LowerBracket.LowerSemiFinals[0].loser = loser
 
+            //mudando com caminho percorrido
+            group.LowerBracket.LowerFinal[0].winner = ''
+            group.LowerBracket.LowerFinal[0].loser = ''
+
         break
 
         
@@ -1147,6 +1203,10 @@ function winner(round, winner, loser) {
 
             group.LowerBracket.LowerSemiFinals[1].winner = winner
             group.LowerBracket.LowerSemiFinals[1].loser = loser
+
+            //mudando cor caminho percorrido
+            group.LowerBracket.LowerFinal[0].winner = ''
+            group.LowerBracket.LowerFinal[0].loser = ''
         break
 
         //Lower Bracket Final
