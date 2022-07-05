@@ -24,14 +24,14 @@ var playoffsMatchups = {
         {                     
             id: 'POSF_M1',
             team1: '',
-            team2: 'TIME 2',
+            team2: '',
             winner: "",
             loser: ""
         },
         {
             id: 'POSF_M2',
             team1: '',
-            team2: 'TIME 2',
+            team2: '',
             winner: "",
             loser: ""
         }
@@ -97,12 +97,12 @@ function setSeeds() {
         else if(groupA == undefined)
             groupA = group
 
-        let team1QF1 = (groupA.LowerBracket.LowerFinal[0].winner != undefined)? groupA.LowerBracket.LowerFinal[0].winner: 'TIME 1'
-        let team2QF1 = (groupB.UpperBracket.UpperFinal[0].loser != undefined)? groupB.UpperBracket.UpperFinal[0].loser: 'TIME 2'
-        let team1QF2 = (groupB.LowerBracket.LowerFinal[0].winner != undefined) ? groupB.LowerBracket.LowerFinal[0].winner: 'TIME 1'
-        let team2QF2 = (groupA.UpperBracket.UpperFinal[0].loser != undefined) ? groupA.UpperBracket.UpperFinal[0].loser: 'TIME 2'
-        let team1SF1 = (groupA.UpperBracket.UpperFinal[0].winner != undefined) ? groupA.UpperBracket.UpperFinal[0].winner: 'TIME 1'
-        let team1SF2 = (groupB.UpperBracket.UpperFinal[0].winner != undefined) ? groupB.UpperBracket.UpperFinal[0].winner: 'TIME 1'
+        let team1QF1 = (groupA.LowerBracket.LowerFinal[0].winner != undefined)? groupA.LowerBracket.LowerFinal[0].winner: ''
+        let team2QF1 = (groupB.UpperBracket.UpperFinal[0].loser != undefined)? groupB.UpperBracket.UpperFinal[0].loser: ''
+        let team1QF2 = (groupB.LowerBracket.LowerFinal[0].winner != undefined) ? groupB.LowerBracket.LowerFinal[0].winner: ''
+        let team2QF2 = (groupA.UpperBracket.UpperFinal[0].loser != undefined) ? groupA.UpperBracket.UpperFinal[0].loser: ''
+        let team1SF1 = (groupA.UpperBracket.UpperFinal[0].winner != undefined) ? groupA.UpperBracket.UpperFinal[0].winner: ''
+        let team1SF2 = (groupB.UpperBracket.UpperFinal[0].winner != undefined) ? groupB.UpperBracket.UpperFinal[0].winner: ''
 
         playoffsMatchups = {
             name: stageSelected,
@@ -127,14 +127,14 @@ function setSeeds() {
                 {                     
                     id: 'POSF_M1',
                     team1: team1SF1,
-                    team2: 'TIME 2',
+                    team2: '',
                     winner: "",
                     loser: ""
                 },
                 {
                     id: 'POSF_M2',
                     team1: team1SF2,
-                    team2: 'TIME 2',
+                    team2: '',
                     winner: "",
                     loser: ""
                 }
@@ -810,8 +810,8 @@ function createRoundDOM(round, roundName) {
     let roundDIV = document.getElementById(`${roundName}`)
 
     for(i=0; i < tam; i++) {
-        let team1 = (round[i].team1 == "") ? 'TIME 1' : round[i].team1.charAt(0).toUpperCase() + round[i].team1.slice(1)
-        let team2 = (round[i].team2 == "") ? 'TIME 2' : round[i].team2.charAt(0).toUpperCase() + round[i].team2.slice(1)
+        let team1 = (round[i].team1 == "") ? '' : round[i].team1.charAt(0).toUpperCase() + round[i].team1.slice(1)
+        let team2 = (round[i].team2 == "") ? '' : round[i].team2.charAt(0).toUpperCase() + round[i].team2.slice(1)
         let team1Color
         let team2Color
         if(round[i].winner == "") {
@@ -886,7 +886,7 @@ function verifyRoundName(round) {
 
 function winner(round, winner, loser) {
     
-    if(loser == '' || loser == 'TIME 2' || loser == 'TIME 1' || winner == '' || winner == 'TIME 2' || winner == 'TIME 1') {
+    if(loser == '' || loser == '' || loser == '' || winner == '' || winner == '' || winner == '') {
         return false
     }
     //fazer cada caso :(
@@ -1077,6 +1077,14 @@ function winner(round, winner, loser) {
             group.UpperBracket.UpperSemiFinals[1].winner = ''
             group.UpperBracket.UpperSemiFinals[1].loser = ''
 
+            group.LowerBracket.LowerSemiFinals[1].winner = ''
+            group.LowerBracket.LowerSemiFinals[1].loser = ''
+
+            group.LowerBracket.LowerFinal[0].winner = ''
+            group.LowerBracket.LowerFinal[0].loser = ''
+
+            if(group.LowerBracket.LowerSemiFinals[1].team2 == loser)
+                group.LowerBracket.LowerSemiFinals[1].team2 = ''
             
         break
 
@@ -1229,6 +1237,17 @@ function winner(round, winner, loser) {
 
             playoffsMatchups.semiFinals[0].team2 = winner
             
+            //mudando possivel caminho anterior
+            playoffsMatchups.semiFinals[0].winner = ''
+            playoffsMatchups.semiFinals[0].loser = ''
+
+            playoffsMatchups.final[0].winner = ''
+            playoffsMatchups.final[0].loser = ''
+
+            playoffsMatchups.final[0].team1 = ''
+
+
+            
         break
 
         case 'poqf_m2':
@@ -1238,6 +1257,15 @@ function winner(round, winner, loser) {
             playoffsMatchups.quarterFinals[1].loser = loser
 
             playoffsMatchups.semiFinals[1].team2 = winner
+
+            //mudando possivel caminho anterior
+            playoffsMatchups.semiFinals[1].winner = ''
+            playoffsMatchups.semiFinals[1].loser = ''
+
+            playoffsMatchups.final[0].winner = ''
+            playoffsMatchups.final[0].loser = ''
+
+            playoffsMatchups.final[0].team2 = ''
             
         break
 
@@ -1249,6 +1277,10 @@ function winner(round, winner, loser) {
 
             playoffsMatchups.final[0].team1 = winner
             
+            //resetando a final
+            playoffsMatchups.final[0].winner = ''
+            playoffsMatchups.final[0].loser = ''
+
         break
 
         case 'posf_m2':
@@ -1258,6 +1290,11 @@ function winner(round, winner, loser) {
             playoffsMatchups.semiFinals[1].loser = loser
 
             playoffsMatchups.final[0].team2 = winner
+
+                        
+            //resetando a final
+            playoffsMatchups.final[0].winner = ''
+            playoffsMatchups.final[0].loser = ''
 
         break
 
