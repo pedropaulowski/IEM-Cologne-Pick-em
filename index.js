@@ -303,13 +303,13 @@ function setSeeds() {
 
 var seed = [
     "NaVi",
-    "TDB",
+    "Mouz",
     "NIP",
     "HEROIC",
     "G2",
     "Mov. Riders",
     "ENCE",
-    "TBD"
+    "Vitality"
 ]
 
 
