@@ -1321,6 +1321,18 @@ function winner(round, winner, loser) {
         
         return
     }
+
+
+    if(id != 'poqf_m1' ||
+        id != 'poqf_m2' ||
+        id != 'posf_m1' ||
+        id != 'posf_m2' ||
+        id != 'pof_m1') {
+
+            localStorage.setItem('playoffs', null)
+
+    }
+
     createSchedule(group)
 
 
