@@ -54,14 +54,14 @@ function setSeeds() {
 
     if(stageSelected == 'groupA') {
         seed = [
-            "Faze",
-            "Encore",
-            "Astralis",
-            "Vitality",
-            "G2",
-            "Movistars Riders",
+            "NaVi",
             "Mouz",
-            "Ence"
+            "NIP",
+            "HEROIC",
+            "G2",
+            "Mov. Riders",
+            "ENCE",
+            "Vitality"
         ]
 
 
@@ -69,14 +69,14 @@ function setSeeds() {
 
     } else if(stageSelected == 'groupB') {
         seed = [
-            "Furia",
-            "Imperial",
+            "FAZE",
+            "00Nation",
             "Liquid",
+            "Spirit",
             "Cloud9",
-            "NIP",
-            "BIG",
-            "MIBR",
-            "Complexity"
+            "Outsiders",
+            "Furia",
+            "Astralis"
         ]
         
 
@@ -302,15 +302,16 @@ function setSeeds() {
 }
 
 var seed = [
-    "Faze",
-    "Encore",
-    "Astralis",
-    "Vitality",
+    "NaVi",
+    "TDB",
+    "NIP",
+    "HEROIC",
     "G2",
-    "Movistars Riders",
-    "Mouz",
-    "Ence"
+    "Mov. Riders",
+    "ENCE",
+    "TBD"
 ]
+
 
 var groupRank = {
     first: "",
@@ -1357,11 +1358,11 @@ function popUpVetos(team1, team2) {
 
     let html = `<a style='text-decoration: underline;' onclick="popUpVetos('','')">Close</a>
                 <div class="vetos_matchup">
-                    <div class="team-board" id='board-pop-up-${team1}-${team2}' onclick='startPicking("${team1}", "${team2}", "board-pop-up-${team1}-${team2}")'>
+                    <div class="team-board" style="font-size:18px"; id='board-pop-up-${team1}-${team2}' onclick='startPicking("${team1}", "${team2}", "board-pop-up-${team1}-${team2}")'>
                             ${team1}
                     </div>
                     x
-                    <div class="team-board" id='board-pop-up-${team2}-${team1}'onclick='startPicking("${team2}", "${team1}", "board-pop-up-${team2}-${team1}")'>
+                    <div class="team-board" style="font-size:18px" id='board-pop-up-${team2}-${team1}'onclick='startPicking("${team2}", "${team1}", "board-pop-up-${team2}-${team1}")'>
                             ${team2}
                     </div>
                     
