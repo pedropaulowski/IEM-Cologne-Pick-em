@@ -25,6 +25,10 @@ body {
     cursor: pointer;
 }
 
+.team-board:hover{
+    opacity: 0.5;
+}
+
 .round {
     display: flex;
     flex-direction: column;
